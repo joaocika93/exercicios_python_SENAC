@@ -38,15 +38,20 @@ def realizar_avaliacao():
             print(list_produtos)
             choice_product = input("Escolha a marca a ser avaliado: ").upper()
             if choice_product in list_produtos:
-                print(notas)
-                nota = int(input("Escolha nota da sua avaliação: "))
-                if nota in notas.values():
-                    avaliacao = Avaliacao(choice_product, nota)
-                    avaliador.set_avaliacao(avaliacao)
-                    pesquisa[avaliador.get_nome()] = avaliador.get_avaliacao()
-                    break
+                list_avaliador = avaliador.get_list_avaliacao()
+                if choice_product not in list_avaliador:
+                    print(notas)
+                    nota = int(input("Escolha nota da sua avaliação: "))
+                    if nota in notas.values():
+                        avaliacao = Avaliacao(choice_product, nota)
+                        avaliador.set_avaliacao(avaliacao)
+                        pesquisa[avaliador.get_nome()] = avaliador.get_avaliacao()
+                        break
+                    else:
+                        print("Nota inválida")
+                        break
                 else:
-                    print("Nota inválida")
+                    print("Produto já Avaliado")
                     break
             else:
                 print("Marca inválida")

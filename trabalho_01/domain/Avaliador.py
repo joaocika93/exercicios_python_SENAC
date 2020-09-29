@@ -27,3 +27,9 @@ class Avaliador:
         for avaliacao in self.avaliacao:
             if marca == avaliacao.get_marca():
                 return avaliacao.get_nota()
+
+    def get_list_avaliacao(self):
+        list_marca = []
+        for avaliacao in self.avaliacao:
+            list_marca.append(avaliacao.get_marca())
+        return list_marca
