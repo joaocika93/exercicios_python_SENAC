@@ -102,7 +102,7 @@ def cadastrar_cidades():
 def relatorio_estados():
     if len(list_estado) > 0:
         for estado in list_estado:
-            print("---> " + estado.sigla + "........ - total de casos: " + estado.nome_estado)
+            print("---> " + estado.sigla + "........ - total de casos: " + str(estado.qt_estado))
     input("[ENTER] Retorna ao menu.")
 
 
